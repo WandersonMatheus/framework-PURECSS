@@ -1,4 +1,4 @@
-
+/* Estilo geral */
 body {
     background-color: #1e1e1e;
     color: #d4d4d4;
@@ -8,60 +8,61 @@ body {
     flex-direction: column;
     align-items: center;
 }
-section{
+
+section {
     height: 100vh;
 }
-#home{
-    display: flex; /* Define que o container usará flexbox */
-    justify-content: center; /* Centraliza horizontalmente */
+
+#home {
+    display: flex;
+    justify-content: center; 
     align-items: center; 
 }
-#home h1{
+
+#home h1 {
     text-align: center;
-    
 }
-/* Menu centralizado */
+
 .menu {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin: 1rem 0;
     font-size: 1.2rem;
-    flex-wrap: nowrap; /* Evita quebra de linha */
+    flex-wrap: nowrap; 
 }
 
 .menu a {
-    color: #569cd6; /* Azul do VS Code */
+    color: #569cd6; 
     text-decoration: none;
     font-size: 1.2rem;
 }
 
-/* Para os símbolos, usamos um span para mudar a cor */
 .menu a span {
-    color: #ffffff; /* Branco para os símbolos */
+    color: #ffffff; 
 }
 
 .menu a:hover {
-    color: #9cdcfe; /* Azul claro para hover */
+    color: #9cdcfe; 
 }
-h1{
+
+h1 {
     text-align: center;
-    color:#569cd6;
+    color: #569cd6;
 }
-h1 span{
+
+h1 span {
     color: white;
 }
 
-/* Estilos da galeria */
 .gallery-container {
     display: grid;
     gap: 1rem;
-    max-width: 1200px;
     width: 100%;
     padding: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajuste para preencher de forma responsiva */
 }
 
-/* Estilos dos cards */
 .card {
     background-color: #252526;
     border: 1px solid #3c3c3c;
@@ -69,13 +70,15 @@ h1 span{
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    padding: 1rem;
+    padding: 2rem;
+    height: 400px;;
+    margin: 3px;
 }
 
 .card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 300px;
+    object-fit: contain;
 }
 
 .card h3 {
@@ -84,30 +87,45 @@ h1 span{
 }
 
 .card p {
-    color:white;
+    color: white;
 }
 
+.social-icon {
+    color: white;
+}
 
-/* Estilos para telas menores */
+.social-icons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.social-icon:hover {
+    color: #0073b1;
+}
+
+.social-icon span {
+    font-size: 16px;
+}
+
 @media (max-width: 768px) {
-    /* Um card por linha */
     .gallery-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 card por linha */
         max-width: 90%;
     }
 
-    /* Centralizando o menu */
     .menu {
         flex-direction: column;
         align-items: center;
     }
 }
 
-/* Estilos para telas maiores */
-@media (min-width: 769px) {
-    /* Exibir mais de um card e centralizar */
-    .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        justify-content: center;
-    }
-}
